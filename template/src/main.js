@@ -17,6 +17,11 @@ import {
   VToolbar,
   transitions
 } from 'vuetify'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+/* eslint-disable no-unused-vars */
+{{#router}}
+import { sync } from 'vuex-router-sync'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/router}}
+
 import '../node_modules/vuetify/src/stylus/app.styl'
 {{else}}
 import Vuetify from 'vuetify'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
@@ -26,7 +31,6 @@ import 'vuetify/dist/vuetify.css'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import store from './store/index';
 {{#router}}
 import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import { sync } from 'vuex-router-sync'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
 
 {{#alacarte}}
@@ -63,6 +67,10 @@ Vue.use(Vuetify{{#theme}}, { theme: {
   warning: '#FFC107'
 }}{{/theme}}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/alacarte}}
+
+{{#router}}
+sync(store, router);
+{{/router}}
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
