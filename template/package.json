@@ -28,7 +28,9 @@
     "vue-router": "^3.0.1"{{/router}},
     "vuetify": "^0.17.6",
     "vuex": "^2.2.1"{{#router}},
-    "vuex-router-sync": "^4.1.2"{{/router}}
+    "vuex-router-sync": "^4.1.2"{{/router}},
+    "axios":"0.16.2",
+    "vue-axios":"2.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
